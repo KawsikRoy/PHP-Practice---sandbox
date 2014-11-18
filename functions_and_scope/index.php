@@ -134,6 +134,8 @@ echo "</pre>";
 */
 
 
+
+
 /* ************************************************************************** */
 
 //	//	//	//	//	//	//	//	//	// 	reusable function
@@ -161,25 +163,34 @@ echo "</pre>";
 
 
 
+/*
 
+function array_pluck ( $arr_var ){ 		// 	from the calling section, get the $people_var
+										// 	$people_var refers to an array
+										// 	and from this array get the arrays  
+										// 	and now these every arrays are $arr_var
 
-function array_pluck( $toPluck, $arr ){
+	// // // $ret_var = array();
+
+	foreach ( $arr_var as $item_var ) {	// 	now every $arr_var is $item_var
+		$ret_var[] = $item_var['age']; 	// 	now the value of 'age' from every $item_var is $ret_var
+	}
+
+	print_r ( $ret_var ); 				// 	take that $ret_var and print it out
 
 }
 
-$people = array(
+$people_var = array(
 	array( 'name' => 'Koushik', 'age' => 22, 'occupation' => 'Web Developer' ),
 	array( 'name' => 'Jenifar', 'age' => 20, 'occupation' => 'SEO' ),
 	array( 'name' => 'Roberto', 'age' => 30, 'occupation' => 'Teacher' )
 );
-
-array_pluck('name', $people);
-
-
-
+			echo "<pre>";
+array_pluck( $people_var );
+			echo "</pre>";
 
 
-
+*/
 
 
 
@@ -187,20 +198,49 @@ array_pluck('name', $people);
 
 
 
+function array_pluck ($toPluck, $arr_var ){ 
+		//				// 	from the calling section, get the $people_var
+		//				// 	$people_var refers to an array
+		//				// 	and from this array get the arrays  
+		//				// 	and now these every arrays are $arr_var 
+		//		// 	and 
+		//				// 	from the calling section, get the 'age' 
+		//				// 	there are many 'age' in same location in an array
+		//				// 	and now get all 'age' from the same location 
+		//				// 	and now these every 'age' are $toPluck
+
+//		// 	$ret_var = array();
+//		// 	I can't understand ,
+// 		// 	Is it necessery to combine all $ret_var into an array ??????
+
+	foreach ( $arr_var as $item_var ) {		// 	now every $arr_var is $item_var
+		$ret_var[] = $item_var[$toPluck]; 	// 	now the value of $toPluck from every $item_var is $ret_var
+	}
+
+	print_r ( $ret_var ); 					// 	take that $ret_var and print it out
+
+}
+
+$people_var = array(
+	array( 'name' => 'Koushik', 'age' => 22, 'occupation' => 'Web Developer' ),
+	array( 'name' => 'Jenifar', 'age' => 20, 'occupation' => 'SEO' ),
+	array( 'name' => 'Roberto', 'age' => 30, 'occupation' => 'Teacher' )
+);
+			echo "<pre>";
+array_pluck('age', $people_var); 			// 	array_pluck function will work with $people_var and 'age'
+			echo "</pre>";				
 
 
 
 
+		//			/* OUTPUT
 
+		//			Array
+		//			(
+		//			    [0] => 22
+		//			    [1] => 20
+		//			    [2] => 30
+		//			)
 
-
-
-
-
-
-
-
-
-
-
+		//			*/
 
