@@ -189,14 +189,11 @@ $people_var = array(
 array_pluck( $people_var );
 			echo "</pre>";
 
-
 */
 
 
 
-
-
-
+/*
 
 function array_pluck ($toPluck, $arr_var ){ 
 		//				// 	from the calling section, get the $people_var
@@ -211,7 +208,7 @@ function array_pluck ($toPluck, $arr_var ){
 
 //		// 	$ret_var = array();
 //		// 	I can't understand ,
-// 		// 	Is it necessery to combine all $ret_var into an array ??????
+// 		// 	Is it necessery to combine all $ret_var into an array 
 
 	foreach ( $arr_var as $item_var ) {		// 	now every $arr_var is $item_var
 		$ret_var[] = $item_var[$toPluck]; 	// 	now the value of $toPluck from every $item_var is $ret_var
@@ -231,9 +228,7 @@ array_pluck('age', $people_var); 			// 	array_pluck function will work with $peo
 			echo "</pre>";				
 
 
-
-
-		//			/* OUTPUT
+		//			 OUTPUT
 
 		//			Array
 		//			(
@@ -242,5 +237,45 @@ array_pluck('age', $people_var); 			// 	array_pluck function will work with $peo
 		//			    [2] => 30
 		//			)
 
-		//			*/
+		//			
+
+*/
+
+
+
+
+function array_pluck($toPluck, $gggg) {
+
+	// 	$ret_var = array(); 
+
+	foreach ($gggg as $item) {
+		$ret[] = $item[$toPluck];
+	}
+	print_r($ret);
+}
+$students = array(
+	array('name' => 'Koushik', 'age' => 22, 'interest' => 'Html'),
+	array('name' => 'Sumanta', 'age' => 36, 'interest' => 'Teaching'),
+	array('name' => 'Robarto', 'age' => 25, 'interest' => 'Design'),
+	array('name' => 'Angeloa', 'age' => 31, 'interest' => 'Cooking'),
+	array('name' => 'Marthoa', 'age' => 30, 'interest' => 'WebDev'),
+	array('name' => 'Agethan', 'age' => 27, 'interest' => 'Python'),
+	array('name' => 'Jonathn', 'age' => 24, 'interest' => 'Wordpress'),
+	array('name' => 'Jackass', 'age' => 29, 'interest' => 'CSS')
+);
+			echo "<pre>";
+array_pluck('age', $students);
+			echo "</pre>";
+
+
+
+
+
+
+
+
+
+
+
+
 
